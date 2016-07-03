@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Simple app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js">
+    </script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="css/starRating.css">
+
+</head>
+<body ng-controller="MyController">
+<h1 class="page-header">Host Family Rating</h1>
+
+<div ng-repeat="host in hosts">
+
+        <div class="col-xs-12" ng-repeat="(key,value) in host">
+            <p class="col-xs-1">{{key}}:</p>
+            <p class="col-xs-2">{{value}}</p>
+        </div>
+        <span role="button" ng-repeat="i in [1,2,3,4,5]" ng-class="rate($index,host)" ng-click="click(host,$index+1)">
+    &#x2605
+</span>
+
+</div>
+
+
+</body>
+</html>
